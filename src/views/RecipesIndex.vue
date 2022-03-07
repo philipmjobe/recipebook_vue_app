@@ -21,9 +21,7 @@
         <div class="card-body">
           <h4 class="card-title">{{ recipe.name }}</h4>
           <p class="card-text">Contributor: {{ recipe.contributor }}</p>
-          <router-link :to="`/recipes/${recipe.id}`">
-            <a class="btn btn-primary">More Info</a>
-          </router-link>
+          <router-link :to="`/recipes/${recipe.id}`">More Info</router-link>
         </div>
       </div>
     </div>
