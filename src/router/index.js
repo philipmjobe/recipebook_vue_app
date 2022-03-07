@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import RecipesIndex from "../views/RecipesIndex.vue";
+import RecipesShow from "../views/RecipesIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   { path: "/recipes", name: "RecipesIndex", component: RecipesIndex },
+  { path: "/recipes/:id", name: "RecipesShow", component: RecipesShow },
 ];
 
 const router = new VueRouter({
