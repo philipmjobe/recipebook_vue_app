@@ -3,8 +3,8 @@
     <h1>{{ message }}</h1>
     <div>
       Search by title:
-      <input type="text" v-model="titleFilter" list="names" />
-      <datalist id="titles">
+      <input type="text" v-model="nameFilter" list="names" />
+      <datalist id="names">
         <option v-for="recipe in recipes" :key="recipe.id">{{ recipe.name }}</option>
       </datalist>
     </div>
@@ -41,7 +41,7 @@ export default {
       message: "Welcome to The Recipe Book!",
       recipes: [],
       currentRecipe: {},
-      titleFilter: "",
+      nameFilter: "",
       sortAttribute: "name",
     };
   },
