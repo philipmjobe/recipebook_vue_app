@@ -26,3 +26,35 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
+export default {
+  mixins: [Vue2Filters.mixin],
+  data: function () {
+    return {
+      message: "Welcome to The Recipe Book!",
+      recipes: [],
+      currentRecipe: {},
+      titleFilter: "",
+      sortAttribute: "name",
+    };
+  },
+  created: function () {
+    this.indexRecipes();
+  },
+  methods: {
+    indexRecipes: function () {
+      axios.get("/recipes").then((response) => {
+        this.recipes = response.data;
+        console.log("All recipes", this.recipes);
+      });
+    },
+    setSortAttribute: function (inputAttribute) {
+      this.sortAttribute = inputAttribute;
+    },
+  },
+};
+</script>
