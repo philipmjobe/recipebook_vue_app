@@ -1,6 +1,7 @@
 <template>
   <div class="recipes-show">
     <h1>{{ recipe.name }}</h1>
+    <p>Category: {{ recipe.category }}</p>
     <p>Contributor: {{ recipe.contributor }}</p>
     <p>Ingredients:</p>
     <ul>
