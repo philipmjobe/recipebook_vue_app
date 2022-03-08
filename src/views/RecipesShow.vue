@@ -2,8 +2,16 @@
   <div class="recipes-show">
     <h1>{{ recipe.name }}</h1>
     <p>Contributor: {{ recipe.contributor }}</p>
-    <p>Ingredients: {{ recipe.ingredients }}</p>
-    <p>Directions: {{ recipe.directions }}</p>
+    <p>Ingredients:</p>
+    <ul>
+      <p>{{ recipe.ingredients }}</p>
+    </ul>
+    <p>Directions:</p>
+    <ul>
+      {{
+        recipe.directions
+      }}
+    </ul>
   </div>
 </template>
 
