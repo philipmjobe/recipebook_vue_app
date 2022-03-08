@@ -21,7 +21,7 @@
         <div class="card-body">
           <h4 class="card-title">{{ recipe.name }}</h4>
           <p class="card-text">Contributor: {{ recipe.contributor }}</p>
-          <router-link :to="`/recipes/${recipe.id}`">More Info</router-link>
+          <router-link v-bind:to="`/recipes/${recipe.id}`">More Info</router-link>
         </div>
       </div>
     </div>
@@ -49,8 +49,8 @@ export default {
   methods: {
     indexRecipes: function () {
       axios.get("/recipes").then((response) => {
+        console.log("All recipes", response);
         this.recipes = response.data;
-        console.log("All recipes", this.recipes);
       });
     },
     setSortAttribute: function (inputAttribute) {

@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import RecipesIndex from "../views/RecipesIndex.vue";
-import RecipesShow from "../views/RecipesIndex.vue";
+import RecipesShow from "../views/RecipesShow.vue";
 
 Vue.use(VueRouter);
 
