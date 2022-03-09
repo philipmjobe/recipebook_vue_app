@@ -2,16 +2,15 @@
   <div class="recipes-show">
     <h1>{{ recipe.name }}</h1>
     <p>Category: {{ recipe.category }}</p>
-    <p>Contributor: {{ recipe.contributor }}</p>
+    <p>Contributor:</p>
+    <p>{{ recipe.contributor }}</p>
     <p>Ingredients:</p>
     <ul>
       <li v-for="(ingredient, index) in recipe.ingredients_list" :key="index">{{ ingredient }}</li>
     </ul>
     <p>Directions:</p>
     <ul>
-      {{
-        recipe.directions
-      }}
+      <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
     </ul>
   </div>
 </template>
