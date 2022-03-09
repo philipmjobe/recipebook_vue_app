@@ -5,7 +5,7 @@
     <p>Contributor: {{ recipe.contributor }}</p>
     <p>Ingredients:</p>
     <ul>
-      <p>{{ recipe.ingredients }}</p>
+      <li v-for="(ingredient, index) in recipe.ingredients_list" :key="index">{{ ingredient }}</li>
     </ul>
     <p>Directions:</p>
     <ul>
