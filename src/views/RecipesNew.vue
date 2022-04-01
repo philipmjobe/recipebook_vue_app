@@ -21,6 +21,10 @@
         <label>Directions:</label>
         <input type="text" v-model="newRecipeParams.directions" />
       </div>
+      <div>
+        <label>Category:</label>
+        <input type="text" v-model="newRecipeParams.category" />
+      </div>
 
       <input type="submit" value="Submit" />
     </form>
