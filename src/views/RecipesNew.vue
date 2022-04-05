@@ -13,7 +13,7 @@
         <label>Contributor:</label>
         <input type="text" v-model="newRecipeParams.contributor" />
       </div>
-      <div>
+      <div class="ingredients">
         <label>Ingredients:</label>
         <input type="text" v-model="newRecipeParams.ingredients" />
       </div>
@@ -34,6 +34,14 @@
 <style>
 form {
   text-align: center;
+}
+input {
+  width: 50%;
+  padding: 5px 5px;
+  margin: 0 auto;
+}
+ingredients {
+  height: 80%;
 }
 </style>
 
