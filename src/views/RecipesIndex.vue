@@ -17,9 +17,9 @@
       v-bind:class="{ selected: recipe === currentRecipe }"
       :key="recipe.id"
     >
-      <div class="row">
-        <div class="col d-flex justify-content-center">
-          <div class="col-sm-6">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+          <div class="col mb-4">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">{{ recipe.name }}</h4>
