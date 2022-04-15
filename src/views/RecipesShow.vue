@@ -1,17 +1,21 @@
 <template>
   <div class="recipes-show">
-    <h1>{{ recipe.name }}</h1>
-    <p>Category: {{ recipe.category }}</p>
-    <p>Contributor:</p>
-    <p>{{ recipe.contributor }}</p>
-    <p>Ingredients:</p>
-    <ul>
-      <li v-for="(ingredient, index) in recipe.ingredients_list" :key="index">{{ ingredient }}</li>
-    </ul>
-    <p>Directions:</p>
-    <ul>
-      <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
-    </ul>
+    <div class="card">
+      <div class="card-body">
+        <h1>{{ recipe.name }}</h1>
+        <p>Category: {{ recipe.category }}</p>
+        <p>Contributor:</p>
+        <p>{{ recipe.contributor }}</p>
+        <p>Ingredients:</p>
+        <ul>
+          <li v-for="(ingredient, index) in recipe.ingredients_list" :key="index">{{ ingredient }}</li>
+        </ul>
+        <p>Directions:</p>
+        <ul>
+          <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
