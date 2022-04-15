@@ -1,5 +1,5 @@
 <template>
-  <div class="justify-content-center">
+  <div class="recipe-index">
     <h1>{{ message }}</h1>
     <div>
       Search by title:
@@ -17,14 +17,15 @@
       v-bind:class="{ selected: recipe === currentRecipe }"
       :key="recipe.id"
     >
-      <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-          <div class="col mb-4">
-            <div class="card">
+      <div class="row">
+        <div v-for="recipe in recipes" v-on:click="currentRecipe = recipe" v-bind:key="recipe.id" class="col-sm-4 mb-4">
+          <div class="card">
+            <div v-bind:class="{ selected: recipe === currentRecipe }">
+              <!-- <img :src="recipe.image_url" v-bind:alt="recipe.title" class="card-img-top" /> -->
               <div class="card-body">
-                <h4 class="card-title">{{ recipe.name }}</h4>
+                <h5 class="card-title">{{ recipe.name }}</h5>
                 <p class="card-text">Contributor: {{ recipe.contributor }}</p>
-                <router-link v-bind:to="`/recipes/${recipe.id}`">More Info</router-link>
+                <a v-bind:href="`/recipes/${recipe.id}`" class="btn btn-primary">More info</a>
               </div>
             </div>
           </div>
