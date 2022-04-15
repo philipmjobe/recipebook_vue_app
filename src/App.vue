@@ -10,3 +10,9 @@
     </nav>
   </div>
 </template>
+
+<style>
+body {
+  background-image: url("./assets/pexels-suzy-hazelwood-5736172.jpg");
+}
+</style>

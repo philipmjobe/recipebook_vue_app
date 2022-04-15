@@ -40,8 +40,8 @@ input {
   padding: 5px 5px;
   margin: 0 auto;
 }
-ingredients {
-  height: 80%;
+button {
+  align-self: center;
 }
 </style>
 
