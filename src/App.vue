@@ -19,7 +19,7 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/recipes">Recipes</a>
+            <router-link class="nav-link" :to="'/recipes'">Recipes</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
