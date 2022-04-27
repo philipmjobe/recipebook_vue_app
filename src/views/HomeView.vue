@@ -71,8 +71,8 @@ export default {
   methods: {
     indexRecipes: function () {
       axios.get("/recipes").then((response) => {
-        console.log("All recipes", response);
         this.recipes = response.data;
+        console.log("All recipes", response);
       });
     },
     setSortAttribute: function (inputAttribute) {
