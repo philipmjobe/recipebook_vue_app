@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1>
+      <b>{{ message }}</b>
+    </h1>
     <div>
       <b>Search by title:</b>
       <input type="text" v-model="nameFilter" list="names" />
@@ -38,6 +40,13 @@
 <style>
 b {
   color: white;
+}
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 </style>
 
