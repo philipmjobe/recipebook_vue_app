@@ -43,6 +43,10 @@ input {
 button {
   align-self: center;
 }
+label {
+  color: white;
+  font-weight: bolder;
+}
 </style>
 
 <script>
