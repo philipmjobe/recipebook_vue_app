@@ -16,11 +16,22 @@
           <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
         </ul>
         <br />
+        <dialog id="recipe-notes">
+          <form method="dialog">
+            <p>
+              Note:
+              <input type="text" />
+            </p>
+            <button v-on:click="updateRecipe()">Add A Note</button>
+            <button>close</button>
+          </form>
+        </dialog>
+        <p>Notes:</p>
+        <ul style="list-style-type: none">
+          <li>{{ recipe.notes }}</li>
+        </ul>
         <br />
         <br />
-        <input type="text" id="comment-box" placeholder="Add A Note To This Recipe" />
-        <button id="post">Add</button>
-        <ul id="unordered"></ul>
       </div>
     </div>
   </div>
@@ -41,15 +52,10 @@ export default {
     });
   },
   methods: {
-    addComment: function () {
-      var post = document.getElementById("post");
-      post.addEventListener("click", function () {
-        var commentBoxValue = document.getElementById("comment-box").value;
-
-        var li = document.createElement("li");
-        var text = document.createTextNode(commentBoxValue);
-        li.appendChild(text);
-        document.getElementById("unordered").appendChild(li);
+    updateRecipe: function (recipe) {
+      axios.patch("http://localhost:3000/recipes/" + recipe.id, recipe).then((response) => {
+        console.log("success", response.data);
+        document.querySelector("#recipe-notes").showModal();
       });
     },
   },
