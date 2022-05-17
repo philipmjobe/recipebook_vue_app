@@ -5,7 +5,7 @@
     </h1>
     <div class="dropdown">
       <button
-        class="btn btn-secondary dropdown-toggle"
+        class="btn btn-info dropdown-toggle"
         type="button"
         id="dropdownMenu2"
         data-bs-toggle="dropdown"
