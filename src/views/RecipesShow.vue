@@ -16,16 +16,27 @@
           <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
         </ul>
         <br />
-        <dialog id="recipe-notes">
-          <form method="dialog">
-            <p>
-              Note:
-              <input type="text" />
-            </p>
-            <button v-on:click="updateRecipe()">Add A Note</button>
-            <button>close</button>
-          </form>
-        </dialog>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add A Note
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <p>Notes:</p>
         <ul style="list-style-type: none">
           <li>{{ recipe.notes }}</li>
