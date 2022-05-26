@@ -11,23 +11,27 @@
         <label>Name:</label>
         <input type="text" v-model="newRecipeParams.name" />
       </div>
+      <br />
       <div>
         <label>Contributor:</label>
         <input type="text" v-model="newRecipeParams.contributor" />
       </div>
+      <br />
       <div class="ingredients">
         <label>Ingredients:</label>
         <input type="text" v-model="newRecipeParams.ingredients" />
       </div>
+      <br />
       <div>
         <label>Directions:</label>
         <input type="text" v-model="newRecipeParams.directions" />
       </div>
+      <br />
       <div>
         <label>Category:</label>
         <input type="text" v-model="newRecipeParams.category" />
       </div>
-
+      <br />
       <input type="submit" value="Submit" />
     </form>
   </div>
