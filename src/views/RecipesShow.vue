@@ -16,27 +16,20 @@
           <li v-for="(direction, index) in recipe.directions_list" :key="index">{{ direction }}</li>
         </ul>
         <br />
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Add A Note
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
+        <div class="add-note">
+          <form v-on:submit.prevent="addNote()">
+            <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+            <div>
+              <label>Add A Note:</label>
+              <input type="text" v-model="currentRecipeParams.notes" />
             </div>
-          </div>
+            <br />
+            <button class="btn btn-danger" type="submit" value="Update">Add Note</button>
+          </form>
         </div>
+        <br />
         <p>Notes:</p>
         <ul style="list-style-type: none">
           <li>{{ recipe.notes }}</li>
@@ -55,19 +48,27 @@ export default {
   data: function () {
     return {
       recipe: {},
+      currentRecipeParams: {},
+      errors: [],
     };
   },
   created: function () {
-    axios.get("/recipes/" + this.$route.params.id).then((response) => {
+    axios.get(`/recipes/${this.$route.params.id}`).then((response) => {
       this.recipe = response.data;
     });
   },
   methods: {
-    updateRecipe: function (recipe) {
-      axios.patch("http://localhost:3000/recipes/" + recipe.id, recipe).then((response) => {
-        console.log("success", response.data);
-        document.querySelector("#recipe-notes").showModal();
-      });
+    addNote: function () {
+      axios
+        .patch("/recipes/" + this.$route.params.id, this.currentRecipeParams)
+        .then((response) => {
+          // this.recipe.push(response.data);
+          this.$router.push(`/recipes/${response.data.id}`);
+          location.reload();
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
     },
   },
 };
