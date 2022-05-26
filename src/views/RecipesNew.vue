@@ -2,6 +2,8 @@
   <div class="recipes-new">
     <form v-on:submit.prevent="createRecipe()">
       <h1>Add A Recipe</h1>
+      <br />
+      <h2>Please Separate Each Of The Ingredients With Commas "," And Each Step In The Directions With A Period "."</h2>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -46,6 +48,9 @@ button {
 label {
   color: white;
   font-weight: bolder;
+}
+h2 {
+  color: rgb(9, 51, 239);
 }
 </style>
 
