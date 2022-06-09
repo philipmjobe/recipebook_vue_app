@@ -31,7 +31,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ recipe.name }}</h5>
             <p class="card-text">Contributor: {{ recipe.contributor }}</p>
-            <a v-bind:href="`/recipes/${recipe.id}`" class="btn btn-primary">More info</a>
+            <router-link v-bind:to="`/recipes/${recipe.id}`" class="btn btn-primary">More info</router-link>
           </div>
           <!-- </div> -->
         </div>
