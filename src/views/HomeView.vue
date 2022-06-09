@@ -16,11 +16,14 @@
         Recipes
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <a v-for="recipe in recipes" v-bind:key="recipe.id" class="dropdown-item" v-bind:to="`/recipes/${recipe.id}`">
+        <router-link
+          v-for="recipe in recipes"
+          v-bind:key="recipe.id"
+          class="dropdown-item"
+          v-bind:to="`/recipes/${recipe.id}`"
+        >
           {{ recipe.name }}
-        </a>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
+        </router-link>
       </div>
     </div>
     <div class="row">
