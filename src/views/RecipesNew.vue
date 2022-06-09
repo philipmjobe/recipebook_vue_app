@@ -74,7 +74,7 @@ export default {
       console.log("New Recipe Inbound");
 
       axios
-        .post("/recipes", this.newRecipeParams)
+        .post("https://vast-shelf-30324.herokuapp.com/recipes", this.newRecipeParams)
         .then(() => {
           this.$router.push("/recipes");
         })

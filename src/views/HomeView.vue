@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     indexRecipes: function () {
-      axios.get("/recipes").then((response) => {
+      axios.get("https://vast-shelf-30324.herokuapp.com/recipes").then((response) => {
         this.recipes = response.data;
         console.log("All recipes", this.recipes);
       });

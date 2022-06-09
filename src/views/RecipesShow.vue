@@ -60,7 +60,7 @@ export default {
   methods: {
     addNote: function () {
       axios
-        .patch("/recipes/" + this.$route.params.id, this.currentRecipeParams)
+        .patch("https://vast-shelf-30324.herokuapp.com/recipes/" + this.$route.params.id, this.currentRecipeParams)
         .then((response) => {
           // this.recipe.push(response.data);
           this.$router.push(`/recipes/${response.data.id}`);
